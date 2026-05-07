@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Employee Access System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Smart Employee Access System</h1>
+
+<!-- LOGIN -->
+<div class="card" id="loginCard">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter Username"><br>
+    <input type="password" id="password" placeholder="Enter Password"><br>
+    <input type="checkbox" onclick="togglePassword()"> Show Password<br>
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- OTP -->
+<div class="card hidden" id="otpCard">
+    <h2>OTP Verification</h2>
+    <input type="text" id="otpInput" placeholder="Enter OTP"><br>
+    <button onclick="verifyOTP()">Verify OTP</button>
+</div>
+
+<!-- DASHBOARD -->
+<div class="card hidden" id="dashboard">
+    <h2>Dashboard</h2>
+    <p id="roleText"></p>
+
+    <div class="menu">
+        <button onclick="showSection('security')">Security Analysis</button>
+        <button onclick="showSection('physical')">Physical Security</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Security Section -->
+    <div id="security" class="section hidden">
+        <h3> Security Analysis</h3>
+        <ul>
+            <li>Weak password-based authentication</li>
+            <li>No multi-factor authentication</li>
+            <li>Excessive access permissions</li>
+        </ul>
+
+        <h3>Solutions</h3>
+        <ul>
+            <li>Implement MFA (OTP)</li>
+            <li>Use Role-Based Access Control</li>
+            <li>Restrict system access</li>
+        </ul>
+    </div>
+
+    <!-- Physical Section -->
+    <div id="physical" class="section hidden">
+        <h3> Physical Security</h3>
+        <ul>
+            <li>Install CCTV cameras</li>
+            <li>Biometric entry systems</li>
+            <li>Restrict server room access</li>
+            <li>Visitor tracking system</li>
+        </ul>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
